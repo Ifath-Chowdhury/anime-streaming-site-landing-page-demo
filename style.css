@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: white;
+    line-height: 1.5;
+}
+
+/*Top bar styling*/
+
+.top-bar-container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgb(117, 182, 255);
+    padding: 1rem;
+}
+
+.top-bar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.topbar a {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    padding: 1.2rem 1rem;
+}
+
+.logo {
+    padding-right: 75rem;
+}
