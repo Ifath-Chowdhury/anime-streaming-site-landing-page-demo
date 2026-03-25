@@ -26,7 +26,7 @@
           </li>
 
           <li>
-            <a class="sign-in">Sign In</a>
+            <a class="sign-in" href="#">Sign In</a>
           </li>
         </ul>
       </nav>
@@ -35,18 +35,75 @@
     <!--Header section-->
 
     <div class="two-column-header">
-      <div class="header-column">
+      <div class="header-column-left">
         <header>
           <h1>Welcome to AnimeSky!</h1>
           <p>Unlimited anime, the sky is the limit</p>
         </header>
       </div>
 
-      <div class="header-column">
+      <div class="header-column-right">
         <header>
-          <h1>Login or sign up to get more out of your anime journey.</h1>
+          <div class="slideshow-container">
+            <div class="slides fade">
+              <img src="images/animesky-slideshow-img-1.jpg" style="width: 100%;">
+            </div>
+
+            <div class="slides fade">
+              <img src="images/animesky-slideshow-img-2.jpg" style="width: 100%;">
+            </div>
+            
+            <div class="slides fade">
+              <img src="images/animesky-slideshow-img-3.jpg" style="width: 100%;">
+            </div>
+            
+            <div class="slides fade">
+              <img src="images/animesky-slideshow-img-4.jpg" style="width: 100%;">
+            </div>
+          </div>
+          <br>
+
+          <div style="text-align: center;">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <br>
+
+          <h1><a href="#">Login or sign up</a> to get more out of your anime journey.</h1>
         </header>
       </div>
+
+      <!--Script for the image slideshow-->
+      <script>
+        let slideIndex = 0;
+        displaySlides();
+
+        function displaySlides() {
+          let i;
+          let slides = document.getElementsByClassName("slides");
+          let dots = document.getElementsByClassName("dot");
+
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+
+          slideIndex++;
+
+          if (slideIndex > slides.length) {
+            slideIndex = 1;
+          }
+
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+          setTimeout(displaySlides, 5000);
+        }
+      </script>
     </div>
 
     <!--Search bar section-->
