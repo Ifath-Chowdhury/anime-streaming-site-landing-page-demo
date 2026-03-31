@@ -38,3 +38,73 @@ body {
 .logo {
     padding-right: 75rem;
 }
+
+/*Header styling*/
+
+.two-column-header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-left: 10px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+}
+
+.header-column-left {
+    flex-basis: 58%;
+    text-align: center;
+}
+
+.header-column-right {
+    text-align: center;
+    flex-basis: 58%;
+}
+
+.header-column-right a {
+    color: rgb(117, 182, 255);
+}
+
+.header-column-left h1 {
+    padding-top: 100px;
+    font-size: 6.5rem;
+    line-height: 1;
+}
+
+.header-column-left p {
+    font-size: 3rem;
+}
+
+/*Image slideshow styling
+
+.slides {
+    display: none;
+}
+*/
+img {
+    vertical-align: middle;
+}
+
+.slideshow-container {
+    margin: auto;
+    margin-right: 50px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
