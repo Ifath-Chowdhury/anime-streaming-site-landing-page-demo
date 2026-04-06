@@ -17,100 +17,113 @@
   </head>
 
   <body>
-    <!--Top bar section - contains a logo on one side and a button to sign in on the other side. Currently has placeholder text-->
-    <div class="top-bar-container">
-      <nav class="top-bar">
-        <ul>
-          <li>
-            <a class="logo">AnimeSky Logo</a>
-          </li>
+    <div class="background">
+      <!--Top bar section - contains a logo on one side and a button to sign in on the other side. Currently has placeholder text-->
+      <div class="top-bar-container">
+        <nav class="top-bar">
+          <ul>
+            <li>
+              <a class="logo">AnimeSky Logo</a>
+            </li>
 
-          <li>
-            <a class="sign-in" href="#">Sign In</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-
-    <!--Header section-->
-
-    <div class="two-column-header">
-      <div class="header-column-left">
-        <header>
-          <h1>Welcome to AnimeSky!</h1>
-          <p>Unlimited anime, the sky is the limit</p>
-        </header>
+            <li>
+              <a class="sign-in" href="#">Sign In</a>
+            </li>
+          </ul>
+        </nav>
       </div>
 
-      <div class="header-column-right">
-        <header>
-          <div class="slideshow-container">
-            <div class="slides fade">
-              <img src="images/animesky-slideshow-img-1.jpg" style="width: 100%;">
-            </div>
+      <!--Header section-->
 
-            <div class="slides fade">
-              <img src="images/animesky-slideshow-img-2.jpg" style="width: 100%;">
-            </div>
-            
-            <div class="slides fade">
-              <img src="images/animesky-slideshow-img-3.jpg" style="width: 100%;">
-            </div>
-            
-            <div class="slides fade">
-              <img src="images/animesky-slideshow-img-4.jpg" style="width: 100%;">
-            </div>
-          </div>
-          <br>
+      <div class="two-column-header">
+        <div class="header-column-left">
+          <header>
+            <h1>Welcome to AnimeSky!</h1>
+            <p>Unlimited anime, the sky is the limit</p>
+          </header>
+        </div>
 
-          <div style="text-align: center;">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-          <br>
+        <div class="header-column-right">
+          <header>
+            <div class="slideshow-container">
+              <div class="slides fade">
+                <img src="images/animesky-slideshow-img-1.jpg" style="width: 100%;">
+              </div>
 
-          <h1><a href="#">Login or sign up</a> to get more out of your anime journey.</h1>
-        </header>
+              <div class="slides fade">
+                <img src="images/animesky-slideshow-img-2.jpg" style="width: 100%;">
+              </div>
+
+              <div class="slides fade">
+                <img src="images/animesky-slideshow-img-3.jpg" style="width: 100%;">
+              </div>
+
+              <div class="slides fade">
+                <img src="images/animesky-slideshow-img-4.jpg" style="width: 100%;">
+              </div>
+            </div>
+            <br>
+
+            <div style="text-align: center;">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <br>
+
+            <h1><a href="#">Login or sign up</a> to get more out of your anime journey.</h1>
+          </header>
+        </div>
+
+        <!--Script for the image slideshow-->
+        <script>
+          let slideIndex = 0;
+          displaySlides();
+
+          function displaySlides() {
+            let i;
+            let slides = document.getElementsByClassName("slides");
+            let dots = document.getElementsByClassName("dot");
+
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+
+            slideIndex++;
+
+            if (slideIndex > slides.length) {
+              slideIndex = 1;
+            }
+
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(displaySlides, 5000);
+          }
+        </script>
       </div>
 
-      <!--Script for the image slideshow-->
-      <script>
-        let slideIndex = 0;
-        displaySlides();
+      <!--Search bar section-->
+      <div class="searchbar-container">
+        <div>
+          <p>Ready to watch?</p>
+          <p>Search for your favourite anime below</p>
+          <div class="searchbar">
+            <input aria-label="Search for an anime" inputmode="search" type="text" placeholder="Search our vast library...">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+          </div>
+          
+        </div>
 
-        function displaySlides() {
-          let i;
-          let slides = document.getElementsByClassName("slides");
-          let dots = document.getElementsByClassName("dot");
-
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-          }
-
-          slideIndex++;
-
-          if (slideIndex > slides.length) {
-            slideIndex = 1;
-          }
-
-          for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-          }
-
-          slides[slideIndex-1].style.display = "block";  
-          dots[slideIndex-1].className += " active";
-          setTimeout(displaySlides, 5000);
-        }
-      </script>
+      </div>
     </div>
-
-    <!--Search bar section-->
-    <div class="searchbar-container">
-      <p>Ready to watch? Search for your favourite anime below</p>
-      <input type="text" placeholder="Search our vast library...">
-    </div>
+    
     
   </body>
 </html>
