@@ -11,7 +11,8 @@ body {
 
 .background {
     background-image: url(images/sky.jpg);
-    background-size: auto;
+    background-repeat: repeat-x;
+    background-position: 0 -200;
     animation: fadeIn 3s ease-in-out 1s;
     animation-fill-mode: forwards;
 }
@@ -34,7 +35,7 @@ body {
     width: 100%;
     z-index: 1000;
     padding-top: 2000px;
-    background: linear-gradient(to bottom, rgb(31, 112, 204) 10%, rgba(117, 182, 255, 0) 100%);
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 10%, rgba(117, 182, 255, 0) 100%);
     padding: 1rem;
 }
 
@@ -134,6 +135,7 @@ img {
     justify-content: center;
     align-items: center;
     padding-top: 40px;
+    padding-bottom: 200px;
     
     height: 300px;
     font-size: 3.5rem;
@@ -166,4 +168,20 @@ img {
     right: -52px;
     top: 38px;
     bottom: 38px;
+}
+
+/*Footer section styling*/
+
+.footer-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 50px;
+    text-align: center;
+    background: #ffffff;
+    background: linear-gradient(0deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 102, 102, 0) 100%);
+}
+
+footer {
+    font-size: medium;
+    margin-left: 100px;
 }
