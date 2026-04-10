@@ -12,6 +12,7 @@ body {
 .background {
     background-image: url(images/sky.jpg);
     background-repeat: repeat-x;
+    background-size: auto;
     background-position: 0 -200;
     animation: fadeIn 3s ease-in-out 1s;
     animation-fill-mode: forwards;
@@ -32,9 +33,8 @@ body {
 .top-bar-container {
     top: 0;
     left: 0;
-    width: 100%;
     z-index: 1000;
-    padding-top: 2000px;
+    padding-top: 100px;
     background: linear-gradient(to bottom, rgb(255, 255, 255) 10%, rgba(117, 182, 255, 0) 100%);
     padding: 1rem;
 }
@@ -47,15 +47,28 @@ body {
     gap: 1rem;
 }
 
-.topbar a {
+.sign-in {
+    border: 3px solid rgb(20, 159, 252);
+    border-radius: 20px;
+    background-color: rgb(82, 163, 255);
     font-size: 1.5rem;
     color: white;
     text-decoration: none;
-    padding: 1.2rem 1rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+    padding-top: -25px;
+}
+
+.sign-in:hover {
+    color: rgb(82, 163, 255);
+    background-color: white;
 }
 
 .logo {
     padding-right: 75rem;
+    margin-top: -10px;
+    height: 150px;
+    width: auto;
 }
 
 /*Header styling*/
