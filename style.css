@@ -1,6 +1,9 @@
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -10,6 +13,7 @@ body {
 }
 
 .background {
+    width: 100%;
     background-image: url(images/sky.jpg);
     background-repeat: repeat-x;
     background-size: auto;
@@ -34,17 +38,20 @@ body {
     top: 0;
     left: 0;
     z-index: 1000;
-    padding-top: 100px;
+    padding-top: 50px;
     background: linear-gradient(to bottom, rgb(255, 255, 255) 10%, rgba(117, 182, 255, 0) 100%);
     padding: 1rem;
+    width: 100%;
+    height: 200px;
 }
 
 .top-bar ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    width: 100%;
 }
 
 .sign-in {
@@ -54,9 +61,10 @@ body {
     font-size: 1.5rem;
     color: white;
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    text-align: center;
+    padding: 0.75rem 1.2rem;
+    margin-top: 0;
     transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-    padding-top: -25px;
 }
 
 .sign-in:hover {
@@ -65,24 +73,40 @@ body {
 }
 
 .logo {
+    float: left;
+    max-width: 200px;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+}
+
+/*.logo {
     padding-right: 75rem;
     margin-top: -10px;
     height: 150px;
     width: auto;
-}
+}*/
 
 /*Header styling*/
 
 .two-column-header {
     display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
-    margin-left: 10px;
-    margin-right: 0px;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 40px auto 20px;
+    max-width: 1200px;
+    padding: 0 1rem;
 }
 
-.header-column-left {
+.header-column-left,
+.header-column-right {
+    flex: 1 1 45%;
+    min-width: 280px;
+    text-align: center;
+}
+
+/*.header-column-left {
     flex-basis: 58%;
     text-align: center;
 }
@@ -90,7 +114,7 @@ body {
 .header-column-right {
     text-align: center;
     flex-basis: 58%;
-}
+}*/
 
 .header-column-right a {
     color: rgb(117, 182, 255);
@@ -98,12 +122,94 @@ body {
 
 .header-column-left h1 {
     padding-top: 100px;
-    font-size: 6.5rem;
+    font-size: clamp(2.5rem, 6vw, 6.5rem);
     line-height: 1;
 }
 
 .header-column-left p {
-    font-size: 3rem;
+    font-size: clamp(1.4rem, 3vw, 3rem);
+}
+
+/*Responsive design*/
+
+@media screen and (max-width: 900px) {
+    .top-bar ul {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .logo {
+        height: 100px;
+        width: auto;
+        margin-top: 0px;
+        padding-right: 0rem;
+    }
+
+    .sign-in {
+        font-size: 1.75rem;
+        padding: 0.25rem 1.5rem;
+    }
+
+    .two-column-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .header-column-left {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /*.header-column-left h1 {
+        font-size: 5rem;
+    }
+
+    .header-column-left p {
+        font-size: 2rem;
+    }*/
+
+    .header-column-right {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .slideshow-container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .background {
+        background-image: url(images/sky.jpg);
+        background-repeat: repeat-x;
+        background-size: auto;
+        background-position: 0 -200;
+        animation: fadeIn 3s ease-in-out 1s;
+        animation-fill-mode: forwards;
+    }
+
+    .searchbar-container {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1rem;
+    }
+
+    .searchbar {
+        width: 300px;
+        padding-left: 0px;
+        padding-right: 2px;
+    }
+
+    .searchbar input {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .searchbar svg {
+        padding-right: 2px;
+    }
 }
 
 /*Image slideshow styling
@@ -117,8 +223,9 @@ img {
 }
 
 .slideshow-container {
-    margin: auto;
-    margin-right: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
 }
 
 .dot {
@@ -145,12 +252,11 @@ img {
 
 .searchbar-container {
     display: flex;
+    flex: 1;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 40px;
-    padding-bottom: 200px;
-    
-    height: 300px;
+    padding-bottom: 75px;
     font-size: 3.5rem;
 }
 
@@ -161,8 +267,10 @@ img {
 .searchbar {
     height: 48px;
     max-width: 561px;
+    width: min(100%, 560px);
     position: relative;
-    padding-left: 150px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .searchbar input {
@@ -175,13 +283,23 @@ img {
 }
 
 .searchbar svg {
+    position: absolute;
+    right: 12px;
+    top: 38px;
+    height: 36px;
+    width: 36px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/*.searchbar svg {
     height: 36px;
     width: auto;
     position: absolute;
     right: -52px;
     top: 38px;
     bottom: 38px;
-}
+}*/
 
 /*Footer section styling*/
 
@@ -196,5 +314,6 @@ img {
 
 footer {
     font-size: medium;
-    margin-left: 100px;
+    margin-left: auto;
+    margin-right: auto;
 }
