@@ -24,10 +24,11 @@ Live Demo: https://anime-streaming-site-landing-page-d.vercel.app/
 I want to improve as a developer, so I decided to make a landing page to practice my front end development skills.
 
 ### Objective
-My objective while undergoing this project 
+My objective while undergoing this project was to create a simple landing page that would give users an intuitive viewing experience
 
 ### Learning Outcomes
-- Build a well structured, responsive website 
+- Build a well structured, responsive website
+- Learn about how to design a good landing page
 
 ---
 
