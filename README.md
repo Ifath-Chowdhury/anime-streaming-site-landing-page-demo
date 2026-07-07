@@ -43,19 +43,7 @@ My objective while undergoing this project was to create a simple landing page t
 
 ## Screenshots
 
-```
-assets/
- ├── home.png
- ├── dashboard.png
- └── login.png
-```
-
-Add inside README:
-
-```markdown
-![Home Page](assets/home.png)
-![Dashboard](assets/dashboard.png)
-```
+![Home Page](images/animesky.png)
 
 ---
 
